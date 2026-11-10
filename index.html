@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOC MONITOR | Infraestrutura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>NOC MONITOR</h1>
+            <p>Painel de monitoramento de infraestrutura</p>
+        </div>
+        <div class="system-status">
+            <span class="pulse"></span>
+            SISTEMA ATIVO
+        </div>
+    </header>
+
+    <main>
+
+        <section class="summary">
+            <div class="summary-card">
+                <span>Servidores</span>
+                <h2 id="totalServidores">3</h2>
+            </div>
+
+            <div class="summary-card">
+                <span>Dispositivos Online</span>
+                <h2 id="totalOnline">4</h2>
+            </div>
+
+            <div class="summary-card">
+                <span>Dispositivos Offline</span>
+                <h2 id="totalOffline">2</h2>
+            </div>
+
+            <div class="summary-card">
+                <span>Disponibilidade</span>
+                <h2 id="disponibilidade">66.7%</h2>
+            </div>
+        </section>
+
+        <section>
+            <h2>Servidores</h2>
+
+            <div class="container">
+
+                <div class="card" data-status="online">
+                    <h3>SRV-01</h3>
+                    <p>Servidor Web</p>
+                    <p class="status online">● ONLINE</p>
+                    <button onclick="alterarStatus(this)">Simular falha</button>
+                </div>
+
+                <div class="card" data-status="offline">
+                    <h3>SRV-02</h3>
+                    <p>Banco de Dados</p>
+                    <p class="status offline">● OFFLINE</p>
+                    <button onclick="alterarStatus(this)">Restabelecer</button>
+                </div>
+
+                <div class="card" data-status="online">
+                    <h3>SRV-03</h3>
+                    <p>Servidor de Aplicação</p>
+                    <p class="status online">● ONLINE</p>
+                    <button onclick="alterarStatus(this)">Simular falha</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Rede</h2>
+
+            <div class="container">
+
+                <div class="card" data-status="online">
+                    <h3>RTR-01</h3>
+                    <p>Roteador Principal</p>
+                    <p class="status online">● ONLINE</p>
+                    <button onclick="alterarStatus(this)">Simular falha</button>
+                </div>
+
+                <div class="card" data-status="online">
+                    <h3>RTR-02</h3>
+                    <p>Roteador Secundário</p>
+                    <p class="status online">● ONLINE</p>
+                    <button onclick="alterarStatus(this)">Simular falha</button>
+                </div>
+
+                <div class="card" data-status="offline">
+                    <h3>SW-01</h3>
+                    <p>Switch de Rede</p>
+                    <p class="status offline">● OFFLINE</p>
+                    <button onclick="alterarStatus(this)">Restabelecer</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="alerts">
+            <h2>Central de Alertas</h2>
+            <ul id="listaAlertas">
+                <li>⚠️ SRV-02 está OFFLINE</li>
+                <li>⚠️ SW-01 está OFFLINE</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        NOC MONITOR - Projeto de monitoramento de infraestrutura
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
